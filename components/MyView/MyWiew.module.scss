@@ -1,0 +1,36 @@
+.my_wrapper {
+  background-color: #252628;
+  min-height: 900px;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  .block_description {
+    padding-left: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    p{
+      margin: 0;
+      font-size: 20px;
+    }
+  }
+  .nice_thin {
+    background-color: darkgray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+  }
+  .particles {
+    width: 100%;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0.5;
+    top: 0;
+  ;
+  }
+}
