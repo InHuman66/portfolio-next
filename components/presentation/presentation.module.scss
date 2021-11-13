@@ -1,0 +1,102 @@
+.content_wrapper {
+  background-color: #252628;
+  min-height: 900px;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+
+  .present_img {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background-color: white;
+  }
+
+  .description_wrapper {
+    position: relative;
+    margin-top: 30px;
+
+    .description_block {
+      width: 100%;
+      box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.4);
+      min-height: 350px;
+      padding: 20px 15px;
+      background-color: #2B2B36FF;
+      h1 {
+        margin: 0;
+        color: white;
+        font-size: 23px;
+        font-weight: 600;
+        font-family: "Poppins", sans-serif;
+      }
+      p {
+        white-space: pre-line;
+        margin-top: 10px;
+        color: white;
+
+      }
+    }
+    .links_block {
+      .button_use{
+        color: #0EFED6;
+        &:hover{
+          color: #00C1C4;
+        }
+      }
+      width: 100%;
+      box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.4);
+      min-height: 350px;
+      padding: 20px 15px;
+      background-color: #2B2B36FF;
+      h1{
+        display: flex;
+        justify-content: center;
+        color: white;
+        font-size: 23px;
+        font-weight: 600;
+        font-family: "Poppins",sans-serif;
+      }
+      p{
+        margin-top: 10px;
+
+        color: white;
+      }
+    }
+  }
+}
+.live_preview {
+  width: 160px;
+  margin-top: 10px;
+  display: flex;
+  position: relative;
+  text-transform: uppercase;
+  font-size: 16px;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+  margin-right: 15px;
+  margin-bottom: 10px;
+  color: #0EFED6;
+  text-decoration: none;
+  &:hover {
+    cursor: pointer;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    margin-right: 15px;
+    margin-bottom: 10px;
+    color: #0EFED6;
+  }
+  &:hover svg{
+    transition: 0.2s;
+    transition-duration: 0.2s;
+    margin-left: 8px;
+  }
+  & svg{
+    transition: 0.2s;
+    transition-duration: 0.2s;
+    margin-left: 0px;
+    font-size: 25px;
+  }
+}

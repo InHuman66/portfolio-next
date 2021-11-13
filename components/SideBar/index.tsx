@@ -1,8 +1,7 @@
 import React from "react";
 import Link from 'next/link';
-import classes from "./Header.module.scss";
+import classes from "./SideBar.module.scss";
 import {Button, ButtonBase, IconButton, Menu, MenuItem} from "@material-ui/core";
-import clsx from "clsx"
 import {
     HomeOutlined  as HomeOutlinedIcon,
     PersonOutlineOutlined as PersonOutlineOutlinedIcon,
@@ -11,16 +10,15 @@ import {
 } from '@material-ui/icons';
 
 type propsType ={
-
+    hide?: boolean
 }
 
 
 
-export const SideBar:React.FC<propsType> = () => {
+export const SideBar:React.FC<propsType> = (props) => {
     let [activeItem, setActiveItem]= React.useState<'home'| 'user' | 'contact' | 'projects'>('home')
     let setButtonMenu =(num: number)=>{
         let screenHeight = window.screen.height
-        console.log(num)
         if (screenHeight <=900){
             let screenCoff = 900 * 0.6
             if(num <= screenCoff){
@@ -50,6 +48,17 @@ export const SideBar:React.FC<propsType> = () => {
             setButtonMenu(document.documentElement.scrollTop);
         }
     }
+    let onClickSkill = (name:string)=>{
+        let position = document.getElementById(name)
+        let value = 0
+        if (position !== null){
+            value = position.offsetTop
+        }
+        window.scrollTo({
+            top: value,
+            behavior: "smooth"
+        });
+    }
     return (
         <div className={classes.side_bar}>
             <div className={classes.logo_wrapper}>
@@ -58,18 +67,23 @@ export const SideBar:React.FC<propsType> = () => {
             <div className={classes.menu_wrapper}>
                 <div className={classes.block_menu}>
                     <div className={classes.block_menu_icons}>
-                        <IconButton>
+                        {props.hide && <Link href={'/'}>
+                            <IconButton>
+                                <HomeOutlinedIcon className={classes.side_bar_icon}/>
+                            </IconButton>
+                        </Link>}
+                        {!props.hide && <IconButton onClick={()=>onClickSkill('home')}>
                             <HomeOutlinedIcon className={activeItem === 'home' ? classes.side_bar_icon_active : classes.side_bar_icon}/>
-                        </IconButton>
-                        <IconButton>
+                        </IconButton>}
+                        {!props.hide && <IconButton onClick={()=>onClickSkill('aboutMe')}>
                             <PersonOutlineOutlinedIcon className={activeItem === 'user' ? classes.side_bar_icon_active : classes.side_bar_icon}/>
-                        </IconButton>
-                        <IconButton>
+                        </IconButton>}
+                        {!props.hide && <IconButton onClick={()=>onClickSkill('contact')}>
                             <EmailOutlinedIcon className={activeItem === 'contact' ? classes.side_bar_icon_active : classes.side_bar_icon}/>
-                        </IconButton>
-                        <IconButton>
+                        </IconButton>}
+                        {!props.hide && <IconButton onClick={()=>onClickSkill('projects')}>
                             <RemoveRedEyeOutlinedIcon className={activeItem === 'projects' ? classes.side_bar_icon_active : classes.side_bar_icon}/>
-                        </IconButton>
+                        </IconButton>}
                     </div>
                 </div>
                 <div className={classes.block_icons}>

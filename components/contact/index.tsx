@@ -34,7 +34,7 @@ const Contact:React.FC<propsType> = () => {
     });
     const onSubmit = (data: IFormInputs) => console.log(data);
     return (
-        <div className={classes.contact_wrapper}>
+        <div className={classes.contact_wrapper} id={'contact'}>
             <div className={'custom-container'}>
                 <div className={classes.body_wrap}>
                     <div className={classes.contact_info}>

@@ -1,5 +1,33 @@
-.projects_wrapper {
-  min-height: 900px;
-  height: 100vh;
-  background-color: #202124;
+.backGroungSizeMyWorks {
+  padding-top: 35px;
+  background-color: #24242FFF;
+  min-height: 100vh;
+  padding-bottom: 30px;
+}
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.title h1{
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+.backgrounColor {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: white;
+}
+.BlockWorks {
+  margin-top: 30px;
+}
+
+.backgrounColor {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: white;
 }

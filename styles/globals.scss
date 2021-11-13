@@ -23,3 +23,12 @@
     padding-left: 25px;
   }
 }
+.particle {
+  margin-left: 80px;
+  position: fixed!important;
+  width: calc(100% - 80px);
+  height: 100%!important;
+}
+::-webkit-scrollbar {
+  width: 0;
+}
